@@ -1,6 +1,8 @@
 
  Practical intro to deep learning based on fast-ai [course](http://course.fast.ai/) lec 1 and 2. 
 
+ Link to view : https://prashantkhurana.github.io/deep-learning-presentation
+
  Built with [reveal.js](https://github.com/hakimel/reveal.js)
 
 
