@@ -1,49 +1,248 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Deep learning - A top down approach</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<meta name="description" content="Deep learning presentation based on first 2 chapters of fast ai course.">
+	<meta name="author" content="Prashant Khurana">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section style="margin-left: -6.5em;" data-background-image="https://images.readitquik.com/images/uploads/content_images/deeplearning_5996b8892e0e9.jpg">
+				<h1 style="color:red">Deep Learning</h1>
+			</section>
+
+			<section>
+					<section>
+						<h1>
+							<a href="http://course.fast.ai">fast.ai</a>
+						</h1>
+						<p class="fragment">Making neural nets uncool again</p>
+					</section>
+					<section>
+						<p>Make Deep Learning More accesible</p>
+						<p class="fragment" style="color: rgb(255, 102, 0)">Top down learning</p>
+						<aside class="notes">Bottom up example : The C programming language chapters
+							<ul>
+								<li>Types, Operators, and Expressions</li>
+								<li>Control Flow</li>
+								<li>Functionsand Program Structure</li>
+								<li>Pointers and Array</li>
+								<li>Structures</li>
+								<li>Input and Output</li>
+								<li>...</li>
+							</ul>
+							Top Down example : Playing Soccer. Where the ball came from, who manufactures it etc. In deep learning bottom up approach
+							you will start with probability, linear algebra, calculus, optimizations etc.
+						</aside>
+					</section>
+				</section>
+
+			<section>
+				<h3><span class="fragment"style='color: #FF0000;'>AI,</span><span class="fragment" style="color: rgb(36, 72, 192)">Machine Learning,</span><span class="fragment" style="color: rgb(255, 0, 234)">Deep Learning</span></h3>
+				<aside class="notes">Linear Regression,Logistic Regression,Decision Tree, KNN etc</aside>
+				<img class="fragment" src="img/2017-10-27-11-58-40.png" alt="">
+
+			</section>
+
+			
+
+			<section>
+				<section>
+					<h1>Agenda</h1>
+				</section>
+				<section>
+					<table class="no-border">
+						<tr class="fragment">
+							<th>
+								<img width="300" height="200" src="http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg"
+								 alt="">
+							</th>
+							<th>
+								<img width="300" height="200" src="https://www.petfinder.com/wp-content/uploads/2012/11/92259289-coping-allergies-pets-632x475.jpg"
+								 alt="">
+							</th>
+							<th>
+								<img width="300" height="200" src="https://www.rd.com/wp-content/uploads/sites/2/2017/05/Why-Your-Cat-Loves-Boxes-According-to-Science-318174692-kmsh.jpg"
+								 alt="">
+							</th>
+						</tr>
+						<tr class="fragment">
+							<th>
+								<img width="300" height="300" src="http://cdn3-www.dogtime.com/assets/uploads/gallery/goldador-dog-breed-pictures/puppy-1.jpg"
+								 alt="">
+							</th>
+							<th>
+								<img width="300" height="300" src="https://www.what-dog.net/Images/faces2/scroll0015.jpg" alt="">
+							</th>
+							<th>
+								<img width="300" height="300" src="https://i.kinja-img.com/gawker-media/image/upload/s--VFUIKb0n--/c_scale,fl_progressive,q_80,w_800/wfotbuukvndidcdjr5on.jpg"
+								 alt="">
+							</th>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h1>Cats vs Dogs</h1>
+					<img height=500 src="http://www.laughspark.com/resources/uploadfiles/the-difference-between-dogs-an-4750.jpg" alt="">
+					<aside class="notes">Magic in this presentation. Overview of deep learning. with top down approach. If you think that you dont' really know
+						whats going on, thats okay. At the same time another goal of the presentation is that you think about these things
+						and maybe then learn more about deep learning. </aside>
+				</section>
+			</section>
+
+			<section>
+				<h2 style="color: blueviolet">Deep Learning Methodology</h2>
+				<section>
+					<ul>
+						<li class="fragment">Get data from <a href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition">Cats and Dogs Competition</a></li>
+						<li class="fragment">Train on the data</li>
+						<li class="fragment">Predict dogs or cats</li>
+					</ul>
+				</section>
+				<section>
+					<br>
+					<img src="img/2017-10-26-22-37-42.png" alt="">
+					<img class="fragment" src="img/2017-10-26-22-38-11.png" alt="">
+					<aside class="notes">Data from https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition</aside>
+				</section>
+				<section>
+					<br>
+					<h4>Training files</h4>
+					<img height=200 width="800"  src="img/2017-10-22-19-42-14.png" alt="">
+					<img height=200 width="800" src="img/2017-10-22-19-44-39.png" alt="">
+				</section>
+				<section>
+					<h4>Testing Files</h4>
+					<img src="img/2017-10-26-22-38-53.png" alt="">
+				</section>
+				<section>
+					<h4>How do we do validation</h4>
+					<p class="fragment">Take sample of training files and use them for validation</p>
+					<img class="fragment" src="img/2017-10-26-22-39-35.png" alt="">
+					<aside class="notes">Training such a large number of images take time, so we will work with a sample and when are solution is prod ready, we work with all the data.</aside>
+				</section>
+				<section>
+						<p>Work with sample data first</p>
+						<img src="img/2017-10-26-22-40-08.png" alt="">
+				</section>
+				<section>
+					<h3>Summary</h3>
+					<ul>
+						<li class="fragment">
+							Divide data into training, validation and testing sets
+						</li>
+						<li class="fragment">
+								Work with sample of data
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<aside class="notes">As a software enginner, reuse is engrained into our brain. So we will reuse an exisiting model and finetune it.</aside>
+				<h1>Fine Tuning</h1>
+				<p>Fine tuning is a process to take a network model that has already been trained for a given task, and make it perform a second similar task. </p>
+			</section>
+
+			<section>
+				<h1>VGG16</h1>
+				Model trained on <a href="http://image-net.org/explore">imagenet</a>.
+				<p class="fragment">
+					Won ImageNet Large Scale Visual Recognition Competition in 2014.
+				</p>
+				<aside class="notes">Imagenet contains over 10 million images. So very state of the art, not old</aside>
+
+			</section>
+
+			<section>
+				<h1>Live Demo</h1>
+				<a href="https://nbviewer.jupyter.org/gist/prashantkhurana/5bff197621c6fd96af6ac4f46640b71d">Sample notebook</a>
+				<aside class="notes">Using p2.xlarge instance i.e 1 NVIDIA K80 GPU, 4 virtual CPU, 61gb of ram.</aside>
+			</section>
+
+
+			<section>
+				<h2>To summarize</h2>
+				<ul>
+					<li class="fragment">Deep learning Using Keras</li>
+					<li class="fragment">Deep learning methodologies</li>
+					<li class="fragment">Finetuning</li>
+					<li class="fragment">Vgg16</li>
+					<li class="fragment">Imagenet</li>
+				</ul>
+
+				
+			</section>
+
+			<!-- Example of nested vertical slides -->
+			
+
+			
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: false,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+
 </html>

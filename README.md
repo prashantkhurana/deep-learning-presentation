@@ -1,3 +1,13 @@
+
+ Practical intro to deep learning based on fast-ai [course](http://course.fast.ai/) lec 1 and 2. 
+
+ Built with [reveal.js](https://github.com/hakimel/reveal.js)
+
+
+# To run
+
+`npm install && npm start`
+
 # reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js) <a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
 
 A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
